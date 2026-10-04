@@ -26,7 +26,7 @@ If the project documents another location (`AGENTS.md`, `CLAUDE.md`, README) or 
 ## Steps
 
 1. Pick the block's theme and a short kebab-case slug (e.g. `checkout-refactor`). Ask if it is ambiguous.
-2. Collect state surgically — without inflating context: `git status --short | head`, the current branch, and only the specific files or docs needed. Do not run broad scans or read large files just to fill the note.
+2. Collect state surgically — without inflating context: `git status --short | head`, the current branch, only the specific files or docs needed, and active browser tab URL / request tracking ID if Playwright is in use. Do not run broad scans or read large files just to fill the note.
 3. Write the file. Copy this frontmatter and adjust:
 
    ```yaml
@@ -47,6 +47,7 @@ If the project documents another location (`AGENTS.md`, `CLAUDE.md`, README) or 
    - **Done** — bullets with `file:line` when technical.
    - **Pending / Blocked** — what comes next, and what stops it.
    - **Bottlenecks** — risks, flaky steps, unknowns.
+   - **Browser / Playwright (if active)** — open tab URL, request/tracking ID, pending payload/step (enables seamless resume without losing request context).
    - **Sources of truth** — files, branches, docs, links.
 5. If the project keeps an index (e.g. `savepoints/_INDEX.md`), update it. If none exists, skip — do not create one unprompted.
 6. End with exactly: `Savepoint written to <path>. Recommend /new for the next block.`
